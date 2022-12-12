@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "name": "Test with correct components",
+      "setup": "npm install",
+      "run": "CI=true npm test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Test with broken components",
+      "setup": "rm -rf src/components && git clone https://github.com/ita-react-react-testing-library/react-testing-library-test src/components && npm install",
+      "run": "CI=true npm test testForTest.test.js",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}
