@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Calculations from "../components/Calculations";
 
@@ -43,7 +43,6 @@ describe("Calculations", () => {
   });
   test("check for subtraction numbers", () => {
     render(<Calculations />);
-    const operation = screen.getByRole("button", { name: "operation" });
     const dropdownItem = screen.getByText("-");
     userEvent.click(dropdownItem);
     const resultHeader = screen.getByRole("heading", { name: 0 });
