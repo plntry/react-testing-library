@@ -1,12 +1,15 @@
+/* eslint-disable testing-library/no-render-in-setup */
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "../components/App";
 // import App from "../brokenComponents/App";
 
 describe('App component', () => {
-    test("should display image when the first tab is selected", () => {
+    beforeEach(() => {
         render(<App />);
+    });
 
+    test("should display image when the first tab is selected", () => {
         const firstTab = screen.getByText(/Picture/i);
 
         userEvent.click(firstTab);
@@ -16,8 +19,6 @@ describe('App component', () => {
     });
 
     test("should display Calculation component when the second tab is selected", () => {
-        render(<App />);
-
         const secondTab = screen.getByText(/Calculations/i);
 
         userEvent.click(secondTab);
@@ -27,8 +28,6 @@ describe('App component', () => {
     });
 
     test("should display ButtonGroup component when the third tab is selected", () => {
-        render(<App />);
-
         const thirdTab = screen.getByText(/Group/i);
 
         userEvent.click(thirdTab);
@@ -38,8 +37,6 @@ describe('App component', () => {
     });
 
     test("shouldn't display ImageCard component when the second tab is selected", () => {
-        render(<App />);
-
         const secondTab = screen.getByText(/Calculations/i);
 
         userEvent.click(secondTab);
@@ -49,8 +46,6 @@ describe('App component', () => {
     });
 
     test("shouldn't display ImageCard component when the third tab is selected", () => {
-        render(<App />);
-
         const thirdTab = screen.getByText(/Group/i);
 
         userEvent.click(thirdTab);
@@ -60,8 +55,6 @@ describe('App component', () => {
     });
 
     test("shouldn't display Calculation component when the first tab is selected", () => {
-        render(<App />);
-
         const firstTab = screen.getByText(/Picture/i);
 
         userEvent.click(firstTab);
@@ -71,8 +64,6 @@ describe('App component', () => {
     });
 
     test("shouldn't display Calculation component when the third tab is selected", () => {
-        render(<App />);
-
         const thirdTab = screen.getByText(/Group/i);
 
         userEvent.click(thirdTab);
@@ -82,8 +73,6 @@ describe('App component', () => {
     });
 
     test("shouldn't display ButtonGroup component when the first tab is selected", () => {
-        render(<App />);
-
         const firstTab = screen.getByText(/Picture/i);
 
         userEvent.click(firstTab);
@@ -93,8 +82,6 @@ describe('App component', () => {
     });
 
     test("shouldn't display ButtonGroup component when the second tab is selected", () => {
-        render(<App />);
-
         const secondTab = screen.getByText(/Calculations/i);
 
         userEvent.click(secondTab);
