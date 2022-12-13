@@ -22,8 +22,8 @@ describe('App component', () => {
 
         userEvent.click(secondTab);
         
-        const evaluateBtn = screen.getByText(/Evaluate/i);
-        expect(evaluateBtn).toBeInTheDocument();
+        const evaluateBtn = screen.queryByText(/Evaluate/i);
+        expect(evaluateBtn).not.toBeNull();
     });
 
     test("should display ButtonGroup component when the third tab is selected", () => {
