@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Calculations from "../components/Calculations";
+// import Calculations from "../brokenComponents/Calculations";
 
 describe("Calculations", () => {
   test("renders correctly", () => {
