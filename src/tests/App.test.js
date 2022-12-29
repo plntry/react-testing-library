@@ -5,11 +5,9 @@ import App from "../components/App";
 // import App from "../brokenComponents/App";
 
 describe('App component', () => {
-    beforeEach(() => {
-        render(<App />);
-    });
-
     test("should display only ImageCard when the first tab is selected", () => {
+        render(<App />);
+
         const firstTab = screen.getByText(/Picture/i);
 
         userEvent.click(firstTab);
@@ -25,6 +23,8 @@ describe('App component', () => {
     });
 
     test("should display only Calculation component when the second tab is selected", () => {
+        render(<App />);
+
         const secondTab = screen.getByText(/Calculations/i);
 
         userEvent.click(secondTab);
@@ -40,6 +40,8 @@ describe('App component', () => {
     });
 
     test("should display only ButtonGroup component when the third tab is selected", () => {
+        render(<App />);
+
         const thirdTab = screen.getByText(/Group/i);
 
         userEvent.click(thirdTab);
